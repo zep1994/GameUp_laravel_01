@@ -14,7 +14,8 @@ class PostsController extends Controller
      */
     public function index()
     {
-        return view('posts.index');
+        $posts = Post::all();
+        return view('posts.index')->with(['posts' => $posts]);
     }
 
     /**
@@ -38,6 +39,8 @@ class PostsController extends Controller
         $post = new Post;
         $post->name = $request->input('name');
         $post->save();
+
+        return redirect('/home');
     }
 
     /**
@@ -48,7 +51,8 @@ class PostsController extends Controller
      */
     public function show($id)
     {
-        //
+        $post = Post::find($id);
+        return view('posts.show')->with('post', $post);
     }
 
     /**
