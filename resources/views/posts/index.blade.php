@@ -1,24 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-
-    <style>
-        .container {
-            width: 100%;
-            height: 100%;
-            position: relative;
-        }
-
-        .container-01 {
-            width: 40%;
-            height: 100%;
-            min-height: 800px;
-            min-width: 400px;
-        }
-
-
-    </style>
-
     <div class="container">
         <div class="container-01"> 
             <h1>Posts</h1>
@@ -27,6 +9,13 @@
                 <div class="card">
                     <div class="card-body">
                         <a href="/posts/{{$post->id}}">{{ $post->name }}</a>
+                        <div class="btn-holder">
+                            <a href="/posts/{{$post->id}}/edit" class="btn btn-default btn-post">Edit Post</a>
+                            {{Form::open(['method'  => 'POST', 'action' => ['PostsController@destroy', $post->id]])}}
+                                {{Form::hidden('_method', 'DELETE')}}
+                                {{ Form::submit('Delete',array('class'=>'btn btn-danger','style'=>'float: right; position: inline-block;' )) }}
+                            {{ Form::close() }}
+                        </div>
                     </div> 
                 </div>
                 @endforeach
