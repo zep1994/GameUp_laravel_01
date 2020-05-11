@@ -38,6 +38,7 @@ class PostsController extends Controller
     {
         $post = new Post;
         $post->name = $request->input('name');
+        $post->user_id = auth()->user()->id;
         $post->save();
 
         return redirect('/home');

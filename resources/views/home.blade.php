@@ -14,7 +14,14 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    <a href="/posts/create" class="btn btn-primary">Create Post</a>
+                    @if($posts)
+                        @foreach ($posts as $post) 
+                            <div class="card-body">
+                                {{$post->name}}
+                            </div>
+                        @endforeach
+                    @endif
                 </div>
             </div>
         </div>
