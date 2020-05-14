@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\User;
+use App\Game;
 
 class HomeController extends Controller
 {
@@ -28,6 +29,7 @@ class HomeController extends Controller
         $user_id = Auth::user()->id;
         $user = User::find($user_id);
         $posts = $user->posts;
-        return view('home')->with('posts', $posts);
+        $games = Game::all();
+        return view('home')->with(['posts' => $posts, 'games' => $games]);
     }
 }

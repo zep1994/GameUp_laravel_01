@@ -3,15 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Post;
+use App\Game;
 
-class PostsController extends Controller
+class GamesController extends Controller
 {
-
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
     /**
      * Display a listing of the resource.
      *
@@ -19,8 +14,7 @@ class PostsController extends Controller
      */
     public function index()
     {
-        $posts = Post::all();
-        return view('posts.index')->with(['posts' => $posts]);
+        //
     }
 
     /**
@@ -30,7 +24,7 @@ class PostsController extends Controller
      */
     public function create()
     {
-        return view('posts.create');
+        return view('games.create');
     }
 
     /**
@@ -41,11 +35,11 @@ class PostsController extends Controller
      */
     public function store(Request $request)
     {
-        $post = new Post;
-        $post->name = $request->input('name');
-        $post->user_id = auth()->user()->id;
-        $post->save();
-
+        $game = new Game;
+        $game->name = $request->input('name');
+        $game->rating = $request->input('rating');
+        $game->system = $request->input('system');
+        $game->save();
         return redirect('/home');
     }
 
@@ -57,8 +51,8 @@ class PostsController extends Controller
      */
     public function show($id)
     {
-        $post = Post::find($id);
-        return view('posts.show')->with('post', $post);
+        $game = Game::find($id);
+        return view('games.show')->with('game', $game);
     }
 
     /**
@@ -69,7 +63,7 @@ class PostsController extends Controller
      */
     public function edit($id)
     {
-        return view('posts.edit');
+        //
     }
 
     /**
@@ -81,11 +75,7 @@ class PostsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $post = Post::find($id);
-        $post->name = $request->input('name');
-        $post->save();
-
-        return redirect('/posts');
+        //
     }
 
     /**
@@ -96,8 +86,6 @@ class PostsController extends Controller
      */
     public function destroy($id)
     {
-        $post = Post::find($id);
-        $post->delete();
-        return redirect('/posts');
+        //
     }
 }

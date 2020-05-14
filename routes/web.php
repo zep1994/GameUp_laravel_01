@@ -13,9 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'PostsController@index');
+Route::get('/', 'HomeController@index');
 
 Route::resource('posts', 'PostsController');
+
+Route::resource('games', 'GamesController');
 
 Auth::routes();
 
