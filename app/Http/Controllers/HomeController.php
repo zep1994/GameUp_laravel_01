@@ -30,6 +30,6 @@ class HomeController extends Controller
         $user = User::find($user_id);
         $posts = $user->posts;
         $games = Game::all();
-        return view('home')->with(['posts' => $posts, 'games' => $games]);
+        return view('home')->with(['user' => $user, 'posts' => $posts, 'games' => $games]);
     }
 }

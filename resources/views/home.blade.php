@@ -5,11 +5,12 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Dashboard</div>
+                <div class="card-header">{{ $user->name }}'s Dashboard</div>
                 <div class="card-body">
                     <a href="/posts/create" class="btn btn-primary">Create Post</a>
                     <a href="/games/create" class="btn btn-primary">Create Game</a>
-                    <div class="games-container">    
+                    <div class="games-container">   
+                        <h6>Games Available on the Platform</h6>
                         @if($games)
                             @foreach ($games as $game) 
                                 <div class="card-body">
