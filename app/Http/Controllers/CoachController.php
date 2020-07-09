@@ -15,7 +15,7 @@ class CoachController extends Controller
     public function index()
     {
         $coaches = User::where('role', '=', 'coach')->get();
-        return view('coaches.index');
+        return view('coaches.index')->with('coaches', $coaches);
     }
 
     /**

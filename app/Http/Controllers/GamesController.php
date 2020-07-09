@@ -64,6 +64,7 @@ class GamesController extends Controller
      */
     public function edit($id)
     {
+        
         $game = Game::find($id);
         return view('games.edit')->with('game', $game);
     }
@@ -77,11 +78,11 @@ class GamesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $post = Post::find($id);
+        $game = Game::find($id);
         $game->name = $request->input('name');
         $game->rating = $request->input('rating');
         $game->system = $request->input('system');
-        $post->save();
+        $game->save();
 
         return redirect('/games');
     }
