@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Game;
+use App\User;
 
-class GamesController extends Controller
+class CoachController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class GamesController extends Controller
      */
     public function index()
     {
-        $games = Game::all();
-        return view('games.index')->with('games', $games);
+        $coaches = User::where('role', '=', 'coach')->get();
+        return view('coaches.index');
     }
 
     /**
@@ -25,7 +25,7 @@ class GamesController extends Controller
      */
     public function create()
     {
-        return view('games.create');
+        //
     }
 
     /**
@@ -36,12 +36,7 @@ class GamesController extends Controller
      */
     public function store(Request $request)
     {
-        $game = new Game;
-        $game->name = $request->input('name');
-        $game->rating = $request->input('rating');
-        $game->system = $request->input('system');
-        $game->save();
-        return redirect('/home');
+        //
     }
 
     /**
@@ -52,8 +47,7 @@ class GamesController extends Controller
      */
     public function show($id)
     {
-        $game = Game::find($id);
-        return view('games.show')->with('game', $game);
+        //
     }
 
     /**
@@ -64,8 +58,7 @@ class GamesController extends Controller
      */
     public function edit($id)
     {
-        $game = Game::find($id);
-        return view('games.edit')->with('game', $game);
+        //
     }
 
     /**
@@ -77,13 +70,7 @@ class GamesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $post = Post::find($id);
-        $game->name = $request->input('name');
-        $game->rating = $request->input('rating');
-        $game->system = $request->input('system');
-        $post->save();
-
-        return redirect('/games');
+        //
     }
 
     /**
@@ -94,8 +81,6 @@ class GamesController extends Controller
      */
     public function destroy($id)
     {
-        $game = Game::find($id);
-        $game->destroy();
-        return redirect('/games');
+        //
     }
 }

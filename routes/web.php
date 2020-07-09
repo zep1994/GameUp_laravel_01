@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'HomeController@index');
 Route::resource('posts', 'PostsController');
 Route::resource('games', 'GamesController');
-
+Route::resource('coaches', 'CoachController');
 
 Auth::routes();
 
