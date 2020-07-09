@@ -14,11 +14,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'HomeController@index');
-
 Route::resource('posts', 'PostsController');
-
 Route::resource('games', 'GamesController');
+
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::group(['middleware' => 'App\Http\Middleware\SuperAdminMiddleware'], function()
+{
+    Route::match(['get', 'post'], '/super_admin/', 'HomeController@index');
+});

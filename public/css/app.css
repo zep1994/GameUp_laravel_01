@@ -10910,11 +10910,6 @@ body {
   position: relative;
 }
 
-.card-body {
-  width: 100%;
-  position: relative;
-}
-
 .btn-post {
   margin: 5px;
   position: inline-block;
@@ -10924,5 +10919,7 @@ body {
 
 .btn-holder {
   float: right;
+  width: 200px;
+  position: inline-block;
 }
 

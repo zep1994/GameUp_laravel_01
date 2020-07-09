@@ -68,6 +68,18 @@
                                 </button>
                             </div>
                         </div>
+
+                    @if(Auth::user()->role === "super_admin") 
+                        <div class=”form-group”>
+                            <label for=”type” class=”col-md-4 control-label” >User Type:</label>
+                            <div class=”col-md-6">
+                                <select class=”form-control” name=”type” id=”type”>
+                                    <option value=”admin”>Coach</option>
+                                    <option value=”super_admin”>Super Admin</option>
+                                </select>
+                            </div>
+                        </div>
+                    @endif
                     </form>
                 </div>
             </div>
