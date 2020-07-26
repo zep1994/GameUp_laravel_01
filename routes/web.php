@@ -14,9 +14,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'HomeController@index');
+
 Route::resource('posts', 'PostsController');
 Route::resource('games', 'GamesController');
 Route::resource('coaches', 'CoachController');
+
+Route::get('profile', 'UsersController@profile');
+Route::post('profile', 'UsersController@update_avatar');
+
 
 Auth::routes();
 

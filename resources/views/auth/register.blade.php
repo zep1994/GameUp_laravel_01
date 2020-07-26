@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
                         @csrf
 
                         <div class="form-group row">
@@ -68,6 +68,15 @@
                                     <option value="admin">Coach</option>
                                     <option value="super_admin">Super Admin</option>
                                 </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="avatar" class="col-md-4 col-form-label text-md-right">User Photo: </label>
+
+                            <div class="col-md-6">
+                                <input type="file" name="avatar" >
+                                <input type="hidden" name="_token" value="{{csrf_token()}}">
                             </div>
                         </div>
 
