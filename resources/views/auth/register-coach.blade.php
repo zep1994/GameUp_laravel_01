@@ -69,12 +69,11 @@
                             </div>
                         </div>
 
-                            <div class="form-group row">
-                                <label for="role" class="col-md-4 col-form-label text-md-right" >Student Registration:</label>
+                        <div class="form-group row">
+                                <label for="role" class="col-md-4 col-form-label text-md-right" >Instructor Registration:</label>
                                 <div class="col-md-6">
                                     <select class="form-control" name="role" id="role">
-                                        <option value="coach">Instructor</option>
-                                        <option value="student">Student</option>
+                                        <option value="coach">Intructor</option>
                                     </select>
                                 </div>
                             </div>
@@ -83,8 +82,8 @@
                             <label for="avatar" class="col-md-4 col-form-label text-md-right">User Photo: </label>
 
                             <div class="col-md-6">
-                                <input type="file" name="avatar">
-                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                <input type="file" name="avatar" >
+                                <input type="hidden" name="_token" value="{{csrf_token()}}">
                             </div>
                         </div>
 
@@ -94,7 +93,12 @@
                                     {{ __('Register') }}
                                 </button>
                             </div>
-                        </div>                      
+
+                            <a class="btn btn-link" href="#">
+                                Dojo Instructor?
+                            </a>
+                        </div>
+                        
                     </form>
                 </div>
             </div>

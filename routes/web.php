@@ -18,6 +18,7 @@ Route::get('/', 'HomeController@index');
 Route::resource('posts', 'PostsController');
 Route::resource('games', 'GamesController');
 Route::resource('coaches', 'CoachController');
+Route::get('BeginLearning', 'SearchCoachController@findCoach');
 
 Route::get('profile', 'UsersController@profile');
 Route::post('profile', 'UsersController@update_avatar');

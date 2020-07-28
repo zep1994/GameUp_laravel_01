@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'GameLift') }}</title>
+    <title>{{ config('app.name', 'DohJo') }}</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -20,10 +20,10 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-    <div id="app" style="height: 100vh; background-image:url({{url('images/rainbow.jpg')}});">
-        <nav class="navbar navbar-expand-md navbar-light shadow-sm">
+    <div id="app" style="height: 100vh; background-color: #f23d4c">
+        <nav class="navbar navbar-expand-md navbar-light">
             <a class="navbar-brand" href="{{ url('/') }}" style="color: white">
-                GameUp
+            DohJo
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                 <span class="navbar-toggler-icon"></span>
@@ -33,7 +33,16 @@
                 @guest
                 @if (Route::has('register'))
                     <li class="nav-item">
-                        <a class="nav-link" style="color: white" href="{{ route('register') }}">{{ __('Register') }}</a>
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuButton" style="border: 0; color: white" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Register
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }} as Student</a>
+                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }} as Instructor</a>
+                        </div>
+                    </div>
+                        
                     </li>
                 @endif
                     @else
