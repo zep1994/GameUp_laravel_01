@@ -17,7 +17,7 @@ Route::get('/', 'HomeController@index');
 Route::resource('posts', 'PostsController');
 Route::resource('games', 'GamesController');
 Route::resource('coaches', 'CoachController');
-
+Route::get('/find_coach', 'CoachController@findCoach');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

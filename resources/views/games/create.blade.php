@@ -19,7 +19,6 @@
                     {{Form::label('system', 'System')}}
                     {{Form::text('system', '', ['class' => 'form-input form-control', 'placeholder' => 'System'])}}
 
-
                 {{Form::submit('Submit', ['class' => 'btn btn-primary mt-2'])}}
             {!! Form::close() !!}
         </div>

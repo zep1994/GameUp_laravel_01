@@ -39,6 +39,9 @@
                             <a class="nav-link" href="/games">Games</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="/find_coach">Find Coach</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="/coaches">Top Coaches</a>
                         </li>
                         @if (Auth::user()->role === "super_admin")
