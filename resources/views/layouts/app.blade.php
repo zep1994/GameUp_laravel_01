@@ -11,6 +11,8 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -39,14 +41,11 @@
                             <a class="nav-link" href="/BeginLearning">Kata</a>
                         </li>
                         <li class="nav-item">
-<<<<<<< HEAD
-                            <a class="nav-link" href="/find_coach">Find Coach</a>
+
+                            <a class="nav-link" href="/find_coach">Explore</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/coaches">Top Coaches</a>
-=======
                             <a class="nav-link" href="/games">Games</a>
->>>>>>> ffcbbb75916341f759e4ffbc17f28883dd77d424
                         </li>
                         @if (Auth::user()->role === "super_admin")
                         <li class="nav-item dropdown">
@@ -66,10 +65,6 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
-                    <form class="form-inline my-2 my-lg-0">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-danger my-2 my-sm-0" style="color: #f23d4c" type="submit">Search</button>
-                    </form>
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">

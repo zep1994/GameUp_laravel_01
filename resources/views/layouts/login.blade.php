@@ -11,6 +11,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -18,6 +19,10 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/util.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ asset('css/main.css') }}">
+    <link rel="icon" type="image/png" href="{{ asset('/images/icons/favicon.ico') }}"/>
+
 </head>
 <body>
     <div id="app" style="height: 100vh; background-color: #f23d4c">

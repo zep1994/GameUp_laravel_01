@@ -29,8 +29,20 @@
                             <label for="avatar" class="col-md-4 col-form-label text-md-right">Phone: </label>
 
                             <div class="col-md-6">
-                                <input type="string" name="phone">
+                                <input type="string" name="phone" class="form-control">
                             </div>
+                        </div>
+
+                        <div class="form-group row">
+                        <label for="consoles" class="col-md-4 col-form-label text-md-right">Select Category :</label>
+                            <select class="selectpicker form-control" multiple data-live-search="true" name="cat[]">
+                                <option name="consoles[]" value="xbox one">PHP</option>
+                                <option value="consoles[]" value="xbox 360">React</option>
+                                <option value="consoles[]" value="ps4">React</option>
+                                <option value="consoles[]" value="ps3">React</option>
+                                <option value="consoles[]" value="switch">React</option>
+                                <option value="consoles[]" value="wii">React</option>
+                            </select>
                         </div>
 
                         <div class="form-group row">
@@ -101,4 +113,5 @@
         </div>
     </div>
 </div>
+
 @endsection

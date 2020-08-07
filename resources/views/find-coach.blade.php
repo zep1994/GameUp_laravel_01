@@ -3,7 +3,7 @@
 @section('content')
     <div class="container-fluid" style=" background-color: #f23d4c; height: 100%;">
         <div class="container" style="background-color: #EEE; height: 100vh; top: 5%;">
-            <div class="left" style="width: 45%; float: left; font-size: 14px; height: 500px; margin: 10px">
+            <div class="left" style="width: 40%; float: left; font-size: 14px; height: 500rem; margin: 10px">
                 <p>
                     Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
                     Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
