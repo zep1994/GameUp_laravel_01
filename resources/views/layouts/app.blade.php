@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'GameLift') }}</title>
+    <title>{{ config('app.name', 'DohJo') }}</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -22,8 +22,8 @@
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <a class="navbar-brand" href="{{ url('/') }}">
-                GameUp
+            <a class="navbar-brand" style="color: #f23d4c;" href="{{ url('/') }}">
+                DohJo
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                 <span class="navbar-toggler-icon"></span>
@@ -33,13 +33,13 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/BeginLearning">Kata</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/games">Games</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/coaches">Top Coaches</a>
                         </li>
                         @if (Auth::user()->role === "super_admin")
                         <li class="nav-item dropdown">
@@ -61,7 +61,7 @@
                     <ul class="navbar-nav ml-auto">
                     <form class="form-inline my-2 my-lg-0">
                         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                        <button class="btn btn-outline-danger my-2 my-sm-0" style="color: #f23d4c" type="submit">Search</button>
                     </form>
                         <!-- Authentication Links -->
                         @guest
@@ -80,12 +80,13 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a href="{{ url('/profile') }}" class="dropdown-item">Profile</a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
                                                     document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
-
+                                                    
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
@@ -99,6 +100,7 @@
 
         <main class="py-4">
             @yield('content')
+            @extends('layouts.footer')
         </main>
     </div>
 </body>
