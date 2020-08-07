@@ -7,8 +7,10 @@
             <div class="card-header">{{ $user->name }}'s Dashboard</div>
             <div class="card-body">
                 <a href="/posts/create" class="btn btn-primary">Create Post</a>
-                <a href="/games/create" class="btn btn-primary">Create Game</a>
-                <a href="/register" class="btn btn-primary">Create User</a>
+                @if (Auth::user()->role === "coach") 
+                    <a href="/games/create" class="btn btn-primary">Create Game</a>
+                @endif
+                
                 <div class="games-container">   
                     <h6>Games Available on the Platform</h6>
                     @if($games)

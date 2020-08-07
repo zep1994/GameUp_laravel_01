@@ -14,10 +14,20 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'HomeController@index');
+
 Route::resource('posts', 'PostsController');
 Route::resource('games', 'GamesController');
 Route::resource('coaches', 'CoachController');
+<<<<<<< HEAD
 Route::get('/find_coach', 'CoachController@findCoach');
+=======
+Route::get('BeginLearning', 'SearchCoachController@findCoach');
+
+Route::get('profile', 'UsersController@profile');
+Route::post('profile', 'UsersController@update_avatar');
+
+
+>>>>>>> ffcbbb75916341f759e4ffbc17f28883dd77d424
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
